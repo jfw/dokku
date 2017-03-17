@@ -6,6 +6,7 @@ Once Dokku has been configured with at least one user, applications can be deplo
 
 ```shell
 # from your local machine
+# you must have SSH access to github enabled from this host
 git clone git@github.com:heroku/ruby-rails-sample.git
 ```
 
@@ -48,11 +49,12 @@ dokku postgres:link rails-database ruby-rails-sample
 
 ### Deploy the app
 
-Now you can deploy the `ruby-rails-sample` app to your Dokku server. All you have to do is add a remote to name the app. Applications are created on-the-fly on the Dokku server.
+Now you can deploy the `ruby-rails-sample` app to your Dokku server. All you have to do is add a remote to name the app. Applications are created on-the-fly on the Dokku server. 
 
 ```shell
 # from your local machine
-# the remote username *must* be dokku or pushes will fail
+# the remote username *must* be dokku or pushes will failcc
+cd ruby-rails-sample
 git remote add dokku dokku@dokku.me:ruby-rails-sample
 git push dokku master
 ```
